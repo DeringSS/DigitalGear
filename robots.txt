@@ -1,0 +1,19 @@
+# TechHub - Robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tudominio.com/sitemap.xml
+
+# Disallow admin pages (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow search engines to crawl
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+
+# Crawl delay (optional)
+Crawl-delay: 1

@@ -1,0 +1,6 @@
+# Google AdSense
+google.com, pub-8214783489769928, DIRECT, f08c47fec0942fa0
+
+# Nota: Reemplaza pub-0000000000000000 con tu ID real de Google AdSense
+# Este archivo debe estar en la raíz de tu dominio
+# Ejemplo: https://tudominio.com/ads.txt
