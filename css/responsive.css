@@ -1,139 +1,120 @@
-/* TechHub - Responsive Styles */
+/* DigitalGear - Responsive Styles */
 
-/* Tablet and below */
-@media (max-width: 992px) {
-  .hero-title {
-    font-size: 2.5rem;
+/* Tablet and Below */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1rem;
   }
 
-  .hero-subtitle {
-    font-size: 1.125rem;
+  /* Header */
+  .menu-toggle {
+    display: flex;
   }
 
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .article-page-title {
-    font-size: 2.25rem;
-  }
-
-  .article-horizontal {
+  .nav-menu {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
     flex-direction: column;
+    background-color: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-md);
+    gap: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
   }
 
-  .article-horizontal .article-image {
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-menu li {
     width: 100%;
-    height: 250px;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: var(--spacing-sm);
+  }
+
+  /* Hero */
+  .hero {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  /* Categories Grid */
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-sm);
+  }
+
+  /* Articles Grid */
+  .articles-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
   }
 }
 
 /* Mobile */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 3rem 0;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-cta {
-    flex-direction: column;
-  }
-
-  .hero-cta .btn {
-    width: 100%;
-  }
-
-  .section-title {
+@media (max-width: 480px) {
+  h1 {
     font-size: 1.75rem;
-    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
   }
 
   .category-card {
-    padding: 1.5rem;
+    padding: var(--spacing-md);
   }
 
-  .category-icon {
-    font-size: 2.5rem;
-  }
-
-  .article-page-title {
-    font-size: 1.75rem;
-  }
-
-  .article-body {
-    font-size: 1rem;
-  }
-
-  .article-body h2 {
-    font-size: 1.5rem;
-  }
-
-  .article-body h3 {
-    font-size: 1.25rem;
-  }
-
-  .category-title {
-    font-size: 2rem;
-  }
-
-  .category-icon-large {
-    font-size: 3rem;
-  }
-
-  .newsletter-form .input-group {
-    flex-direction: column;
-  }
-
-  .newsletter-form .form-control,
-  .newsletter-form .btn {
-    border-radius: 8px !important;
-    width: 100%;
-  }
-
-  .newsletter-form .btn {
-    margin-top: 0.5rem;
-  }
-
-  .footer {
-    padding: 2rem 0 1rem;
-  }
-
-  .ad-placeholder {
-    font-size: 0.875rem;
-    padding: 1rem;
+  .article-image {
+    height: 180px;
   }
 }
 
-/* Small mobile */
-@media (max-width: 576px) {
-  .hero-title {
-    font-size: 1.75rem;
+/* Large Desktop */
+@media (min-width: 1400px) {
+  :root {
+    --container-max: 1400px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .site-header,
+  .menu-toggle,
+  .ad-space,
+  .site-footer {
+    display: none;
   }
 
-  .navbar-brand {
-    font-size: 1.25rem;
+  body {
+    background: white;
+    color: black;
   }
 
-  .logo-icon {
-    font-size: 1.5rem;
-  }
-
-  .article-title {
-    font-size: 1.25rem;
-  }
-
-  .affiliate-cta {
-    padding: 1.5rem;
-  }
-
-  .affiliate-cta h4 {
-    font-size: 1.25rem;
+  a {
+    color: black;
+    text-decoration: underline;
   }
 }

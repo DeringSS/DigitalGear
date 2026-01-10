@@ -3,328 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TechHub - Tu fuente de información sobre tecnología, gadgets, smartphones y las últimas innovaciones. Reviews, análisis y guías de compra.">
-    <meta name="keywords" content="tecnología, gadgets, smartphones, reviews, accesorios, inteligencia artificial">
-    <meta name="author" content="TechHub">
-    <title>TechHub - Tecnología y Gadgets | Últimas Noticias y Reviews</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Added Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta name="description" content="DigitalGear - Tu fuente de información sobre tecnología, gadgets, reviews, comparativas y las últimas tendencias en el mundo tech.">
+    <meta name="keywords" content="tecnología, gadgets, smartphones, reviews, comparativas, inteligencia artificial, accesorios tecnológicos">
+    <meta name="author" content="DigitalGear">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="DigitalGear - Tecnología y Gadgets">
+    <meta property="og:description" content="Información profesional sobre tecnología, gadgets y tendencias tech">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.digitalgear.com">
+    <meta property="og:image" content="https://www.digitalgear.com/img/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DigitalGear - Tecnología y Gadgets">
+    <meta name="twitter:description" content="Tu fuente de información sobre tecnología y gadgets">
+    
+    <title>DigitalGear - Tecnología, Gadgets y Reviews | Información Tech Profesional</title>
+    
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header-main">
-        <!-- Changed to navbar-light for pastel theme -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <!-- Replaced emoji with Bootstrap icon -->
-                    <i class="bi bi-cpu logo-icon"></i>
-                    <span class="logo-text">DigitalGear</span>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">DG</span>
+                    <span>DigitalGear</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="categoria.html?cat=smartphones">Smartphones</a></li>
-                        <li class="nav-item"><a class="nav-link" href="categoria.html?cat=gadgets">Gadgets</a></li>
-                        <li class="nav-item"><a class="nav-link" href="categoria.html?cat=ia">IA</a></li>
-                        <li class="nav-item"><a class="nav-link" href="categoria.html?cat=reviews">Reviews</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                
+                <nav>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="active">Inicio</a></li>
+                        <li><a href="categoria.html?cat=gadgets">Gadgets</a></li>
+                        <li><a href="categoria.html?cat=smartphones">Smartphones</a></li>
+                        <li><a href="categoria.html?cat=ia">Inteligencia Artificial</a></li>
+                        <li><a href="categoria.html?cat=reviews">Reviews</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                     </ul>
-                </div>
-            </div>
-        </nav>
-        
-        <!-- Ad Space - Header -->
-        <div class="ad-space ad-header">
-            <div class="container">
-                <div class="ad-placeholder">Espacio publicitario 728x90</div>
+                </nav>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h1 class="hero-title">Descubre la Tecnología que Transforma tu Vida</h1>
-                    <p class="hero-subtitle">Reviews profesionales, análisis en profundidad y las últimas novedades en tecnología y gadgets. Tu guía definitiva para estar a la vanguardia digital.</p>
-                    <div class="hero-cta">
-                        <a href="#articulos-destacados" class="btn btn-primary btn-lg">Explorar Contenido</a>
-                        <a href="categoria.html?cat=reviews" class="btn btn-outline-light btn-lg">Ver Reviews</a>
-                    </div>
-                </div>
-            </div>
+            <h1>Descubre el Futuro de la Tecnología</h1>
+            <p class="hero-description">
+                Tu fuente confiable de información sobre gadgets, smartphones, inteligencia artificial y las últimas tendencias tecnológicas. 
+                Reviews detalladas, comparativas y análisis profesionales para ayudarte a tomar las mejores decisiones.
+            </p>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="categories-section py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Explora por Categorías</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <a href="categoria.html?cat=smartphones" class="category-card">
-                        <!-- Replaced emoji with Bootstrap icon -->
-                        <i class="bi bi-phone category-icon"></i>
-                        <h3>Smartphones</h3>
-                        <p>Los últimos modelos y comparativas detalladas</p>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="categoria.html?cat=gadgets" class="category-card">
-                        <!-- Replaced emoji with Bootstrap icon -->
-                        <i class="bi bi-smartwatch category-icon"></i>
-                        <h3>Gadgets</h3>
-                        <p>Dispositivos innovadores que debes conocer</p>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="categoria.html?cat=ia" class="category-card">
-                        <!-- Replaced emoji with Bootstrap icon -->
-                        <i class="bi bi-robot category-icon"></i>
-                        <h3>Inteligencia Artificial</h3>
-                        <p>El futuro de la tecnología está aquí</p>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="categoria.html?cat=accesorios" class="category-card">
-                        <!-- Replaced emoji with Bootstrap icon -->
-                        <i class="bi bi-headphones category-icon"></i>
-                        <h3>Accesorios</h3>
-                        <p>Complementa tu experiencia tecnológica</p>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="categoria.html?cat=reviews" class="category-card">
-                        <!-- Replaced emoji with Bootstrap icon -->
-                        <i class="bi bi-star-fill category-icon"></i>
-                        <h3>Reviews</h3>
-                        <p>Análisis profesionales y honestos</p>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="categoria.html?cat=guias" class="category-card">
-                        <!-- Replaced emoji with Bootstrap icon -->
-                        <i class="bi bi-journal-text category-icon"></i>
-                        <h3>Guías de Compra</h3>
-                        <p>Encuentra el producto perfecto para ti</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ad Space - Mid Content -->
-    <div class="ad-space ad-mid-content">
-        <div class="container">
-            <div class="ad-placeholder">Espacio publicitario 728x90</div>
+    <!-- Ad Space - Header -->
+    <div class="container">
+        <div class="ad-space" id="ad-header">
+            <!-- Google AdSense Header Ad -->
+            <p>Espacio publicitario</p>
         </div>
     </div>
 
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2>Explora por Categoría</h2>
+            <div class="categories-grid">
+                <a href="categoria.html?cat=gadgets" class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3>Gadgets</h3>
+                    <p>Los dispositivos más innovadores del mercado</p>
+                </a>
+                
+                <a href="categoria.html?cat=smartphones" class="category-card">
+                    <div class="category-icon">📱</div>
+                    <h3>Smartphones</h3>
+                    <p>Análisis y reviews de los últimos móviles</p>
+                </a>
+                
+                <a href="categoria.html?cat=ia" class="category-card">
+                    <div class="category-icon">🤖</div>
+                    <h3>Inteligencia Artificial</h3>
+                    <p>El futuro de la tecnología ya está aquí</p>
+                </a>
+                
+                <a href="categoria.html?cat=accesorios" class="category-card">
+                    <div class="category-icon">🎧</div>
+                    <h3>Accesorios</h3>
+                    <p>Complementa tu setup tecnológico</p>
+                </a>
+                
+                <a href="categoria.html?cat=reviews" class="category-card">
+                    <div class="category-icon">⭐</div>
+                    <h3>Reviews</h3>
+                    <p>Análisis detallados y honestos</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Featured Articles -->
-    <section id="articulos-destacados" class="featured-articles py-5">
+    <section class="articles">
         <div class="container">
-            <h2 class="section-title text-center mb-5">Artículos Destacados</h2>
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <article class="article-card article-featured">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Último smartphone flagship" class="article-image">
-                        <div class="article-content">
+            <h2>Artículos Destacados</h2>
+            <div class="articles-grid">
+                <!-- Article 1 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Los mejores smartphones de 2026" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
                             <span class="article-category">Smartphones</span>
-                            <h3 class="article-title">Los 10 Mejores Smartphones de 2026: Guía Completa</h3>
-                            <p class="article-excerpt">Análisis exhaustivo de los smartphones más potentes del año, con comparativas de rendimiento, cámara y batería que te ayudarán a elegir el mejor.</p>
-                            <div class="article-meta">
-                                <span class="article-date">10 Ene 2026</span>
-                                <span class="article-read-time">8 min lectura</span>
-                            </div>
-                            <a href="articulo.html?id=mejores-smartphones-2026" class="btn btn-primary">Leer Más</a>
+                            <span class="article-date">10 Ene 2026</span>
                         </div>
-                    </article>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row g-4">
-                        <div class="col-12">
-                            <article class="article-card article-horizontal">
-                                <img src="/placeholder.svg?height=200&width=300" alt="Gadget con IA" class="article-image">
-                                <div class="article-content">
-                                    <span class="article-category">IA</span>
-                                    <h3 class="article-title">Cómo la IA Está Revolucionando los Gadgets</h3>
-                                    <p class="article-excerpt">Descubre cómo la inteligencia artificial está transformando la forma en que interactuamos con la tecnología.</p>
-                                    <a href="articulo.html?id=ia-revoluciona-gadgets" class="btn btn-link">Leer Más →</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-12">
-                            <article class="article-card article-horizontal">
-                                <img src="/placeholder.svg?height=200&width=300" alt="Auriculares inalámbricos" class="article-image">
-                                <div class="article-content">
-                                    <span class="article-category">Reviews</span>
-                                    <h3 class="article-title">Review: Los Mejores Auriculares Inalámbricos</h3>
-                                    <p class="article-excerpt">Probamos los 5 auriculares más populares del mercado para encontrar el mejor en calidad de sonido.</p>
-                                    <a href="articulo.html?id=review-auriculares" class="btn btn-link">Leer Más →</a>
-                                </div>
-                            </article>
-                        </div>
+                        <h3><a href="articulo.html">Los Mejores Smartphones de 2026: Comparativa Completa</a></h3>
+                        <p class="article-excerpt">
+                            Analizamos los smartphones más destacados del mercado con especificaciones, precios y rendimiento real. Descubre cuál se adapta mejor a tus necesidades.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </article>
 
-    <!-- Latest Articles Grid -->
-    <section class="latest-articles py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Últimas Publicaciones</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <article class="article-card">
-                        <img src="/placeholder.svg?height=250&width=400" alt="Smartwatch" class="article-image">
-                        <div class="article-content">
-                            <span class="article-category">Gadgets</span>
-                            <h3 class="article-title">Los Smartwatches Más Completos para Fitness</h3>
-                            <p class="article-excerpt">Comparativa de los mejores relojes inteligentes para deportistas y entusiastas del fitness.</p>
-                            <a href="articulo.html?id=smartwatches-fitness" class="btn btn-link">Leer Más →</a>
+                <!-- Article 2 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="IA en la vida cotidiana" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Inteligencia Artificial</span>
+                            <span class="article-date">9 Ene 2026</span>
                         </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <article class="article-card">
-                        <img src="/placeholder.svg?height=250&width=400" alt="Laptop gaming" class="article-image">
-                        <div class="article-content">
-                            <span class="article-category">Reviews</span>
-                            <h3 class="article-title">Laptops Gaming: Potencia al Máximo Nivel</h3>
-                            <p class="article-excerpt">Análisis de las laptops más potentes para gaming en 2026 con las mejores tarjetas gráficas.</p>
-                            <a href="articulo.html?id=laptops-gaming" class="btn btn-link">Leer Más →</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <article class="article-card">
-                        <img src="/placeholder.svg?height=250&width=400" alt="Casa inteligente" class="article-image">
-                        <div class="article-content">
-                            <span class="article-category">Guías</span>
-                            <h3 class="article-title">Guía para Convertir tu Casa en Inteligente</h3>
-                            <p class="article-excerpt">Todo lo que necesitas saber para automatizar tu hogar con los mejores dispositivos.</p>
-                            <a href="articulo.html?id=guia-casa-inteligente" class="btn btn-link">Leer Más →</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <article class="article-card">
-                        <img src="/placeholder.svg?height=250&width=400" alt="Tablet para diseño" class="article-image">
-                        <div class="article-content">
-                            <span class="article-category">Smartphones</span>
-                            <h3 class="article-title">Las Mejores Tablets para Diseñadores</h3>
-                            <p class="article-excerpt">Encuentra la tablet perfecta para diseño gráfico, ilustración y edición de contenido.</p>
-                            <a href="articulo.html?id=tablets-disenadores" class="btn btn-link">Leer Más →</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <article class="article-card">
-                        <img src="/placeholder.svg?height=250&width=400" alt="Drone con cámara" class="article-image">
-                        <div class="article-content">
-                            <span class="article-category">Gadgets</span>
-                            <h3 class="article-title">Drones 2026: Comparativa de Modelos</h3>
-                            <p class="article-excerpt">Los drones más avanzados del año con cámaras 4K y funciones de seguimiento inteligente.</p>
-                            <a href="articulo.html?id=drones-2026" class="btn btn-link">Leer Más →</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <article class="article-card">
-                        <img src="/placeholder.svg?height=250&width=400" alt="Teclado mecánico" class="article-image">
-                        <div class="article-content">
+                        <h3><a href="articulo.html">Cómo la IA Está Transformando Nuestra Vida Cotidiana</a></h3>
+                        <p class="article-excerpt">
+                            La inteligencia artificial ya no es ciencia ficción. Descubre cómo la IA está presente en tu día a día y hacia dónde se dirige el futuro.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Mejores auriculares inalámbricos" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
                             <span class="article-category">Accesorios</span>
-                            <h3 class="article-title">Teclados Mecánicos: Guía de Compra 2026</h3>
-                            <p class="article-excerpt">Todo sobre switches, layouts y las mejores marcas de teclados mecánicos del mercado.</p>
-                            <a href="articulo.html?id=guia-teclados-mecanicos" class="btn btn-link">Leer Más →</a>
+                            <span class="article-date">8 Ene 2026</span>
                         </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter-section py-5">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2 class="text-center mb-3">Mantente Actualizado</h2>
-                <p class="text-center mb-4">Recibe las últimas noticias y reviews directamente en tu correo</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
-                        <button class="btn btn-primary" type="submit">Suscribirse</button>
+                        <h3><a href="articulo.html">Auriculares Inalámbricos 2026: Top 10 con Mejor Sonido</a></h3>
+                        <p class="article-excerpt">
+                            Comparamos los mejores auriculares inalámbricos del mercado. Calidad de sonido, cancelación de ruido y autonomía en nuestra review completa.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
                     </div>
-                </form>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Gadgets para smart home" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Gadgets</span>
+                            <span class="article-date">7 Ene 2026</span>
+                        </div>
+                        <h3><a href="articulo.html">Gadgets Imprescindibles para Tu Casa Inteligente</a></h3>
+                        <p class="article-excerpt">
+                            Convierte tu hogar en una casa inteligente con estos gadgets esenciales. Automatización, seguridad y confort al alcance de tu mano.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Laptops para trabajo remoto" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Reviews</span>
+                            <span class="article-date">6 Ene 2026</span>
+                        </div>
+                        <h3><a href="articulo.html">Las Mejores Laptops para Trabajo Remoto en 2026</a></h3>
+                        <p class="article-excerpt">
+                            Rendimiento, portabilidad y autonomía. Analizamos las laptops ideales para profesionales que trabajan desde cualquier lugar.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Setup gaming 2026" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Gadgets</span>
+                            <span class="article-date">5 Ene 2026</span>
+                        </div>
+                        <h3><a href="articulo.html">Crea el Setup Gaming Perfecto: Guía Completa 2026</a></h3>
+                        <p class="article-excerpt">
+                            Desde el monitor hasta el teclado mecánico. Todo lo que necesitas saber para montar tu estación de gaming definitiva.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Ad Space - Footer -->
-    <div class="ad-space ad-footer">
-        <div class="container">
-            <div class="ad-placeholder">Espacio publicitario 728x90</div>
+    <!-- Ad Space - Bottom -->
+    <div class="container">
+        <div class="ad-space" id="ad-bottom">
+            <!-- Google AdSense Bottom Ad -->
+            <p>Espacio publicitario</p>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="site-footer">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="footer-brand">
-                        <!-- Replaced emoji with Bootstrap icon -->
-                        <i class="bi bi-cpu logo-icon"></i>
-                        <span class="logo-text">TechHub</span>
-                    </div>
-                    <p class="footer-description">Tu fuente confiable de información sobre tecnología y gadgets. Reviews, análisis y guías para mantenerte a la vanguardia.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DigitalGear</h4>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem;">
+                        Tu fuente confiable de información tecnológica. Reviews, análisis y las últimas tendencias en gadgets y tecnología.
+                    </p>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h4 class="footer-title">Categorías</h4>
+                
+                <div class="footer-section">
+                    <h4>Categorías</h4>
                     <ul class="footer-links">
-                        <li><a href="categoria.html?cat=smartphones">Smartphones</a></li>
                         <li><a href="categoria.html?cat=gadgets">Gadgets</a></li>
-                        <li><a href="categoria.html?cat=ia">IA</a></li>
+                        <li><a href="categoria.html?cat=smartphones">Smartphones</a></li>
+                        <li><a href="categoria.html?cat=ia">Inteligencia Artificial</a></li>
+                        <li><a href="categoria.html?cat=accesorios">Accesorios</a></li>
                         <li><a href="categoria.html?cat=reviews">Reviews</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h4 class="footer-title">Información</h4>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
                     <ul class="footer-links">
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="cookies.html">Política de Cookies</a></li>
+                        <li><a href="terminos.html">Términos y Condiciones</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="privacidad.html">Privacidad</a></li>
-                        <li><a href="cookies.html">Cookies</a></li>
-                        <li><a href="terminos.html">Términos</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h4 class="footer-title">Síguenos</h4>
-                    <div class="social-links">
-                        <!-- Replaced emojis with Bootstrap icons -->
-                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                    </div>
+                
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" target="_blank" rel="noopener">Twitter</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+                    </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 TechHub. Todos los derechos reservados.</p>
-                <p class="disclosure">Este sitio participa en programas de afiliados y puede recibir comisiones por compras realizadas a través de nuestros enlaces.</p>
+                <p>&copy; 2026 DigitalGear. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/ads.js"></script>
 </body>
 </html>

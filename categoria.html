@@ -3,247 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explora artículos sobre tecnología y gadgets organizados por categoría. Reviews, análisis y guías de compra.">
-    <title>Categoría | TechHub - Tecnología y Gadgets</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Added Bootstrap Icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta name="description" content="Explora todos los artículos de DigitalGear sobre tecnología, gadgets y reviews. Información actualizada y análisis profesionales.">
+    <meta name="keywords" content="categoría tecnología, artículos tech, gadgets, smartphones, reviews">
+    <meta name="robots" content="index, follow">
+    
+    <title>Categoría: Tecnología | DigitalGear</title>
+    
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header-main">
-        <!-- Changed to navbar-light for pastel theme -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <!-- Replaced emoji with Bootstrap icon -->
-                    <i class="bi bi-cpu logo-icon"></i>
-                    <span class="logo-text">TechHub</span>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">DG</span>
+                    <span>DigitalGear</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="categoria.html?cat=smartphones">Smartphones</a></li>
-                        <li class="nav-item"><a class="nav-link" href="categoria.html?cat=gadgets">Gadgets</a></li>
-                        <li class="nav-item"><a class="nav-link" href="categoria.html?cat=ia">IA</a></li>
-                        <li class="nav-item"><a class="nav-link" href="categoria.html?cat=reviews">Reviews</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                
+                <nav>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="categoria.html?cat=gadgets">Gadgets</a></li>
+                        <li><a href="categoria.html?cat=smartphones">Smartphones</a></li>
+                        <li><a href="categoria.html?cat=ia">Inteligencia Artificial</a></li>
+                        <li><a href="categoria.html?cat=reviews">Reviews</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                     </ul>
-                </div>
-            </div>
-        </nav>
-        
-        <!-- Ad Space - Header -->
-        <div class="ad-space ad-header">
-            <div class="container">
-                <div class="ad-placeholder">Espacio publicitario 728x90</div>
+                </nav>
             </div>
         </div>
     </header>
 
     <!-- Category Header -->
-    <section class="category-header py-5">
+    <section class="hero" style="padding: var(--spacing-xl) 0;">
         <div class="container">
-            <!-- Replaced emoji with Bootstrap icon -->
-            <i class="bi bi-phone category-icon-large" id="categoryIcon"></i>
-            <h1 class="category-title" id="categoryTitle">Smartphones</h1>
-            <p class="category-description" id="categoryDescription">Descubre los últimos modelos, comparativas y análisis en profundidad de smartphones</p>
+            <h1 id="categoryTitle">Categoría: Tecnología</h1>
+            <p class="hero-description" id="categoryDescription">
+                Explora todos nuestros artículos sobre tecnología, gadgets y las últimas tendencias del mercado.
+            </p>
         </div>
     </section>
 
-    <!-- Category Articles -->
-    <section class="category-articles py-5">
+    <!-- Ad Space - Header -->
+    <div class="container">
+        <div class="ad-space" id="ad-header">
+            <!-- Google AdSense Header Ad -->
+            <p>Espacio publicitario</p>
+        </div>
+    </div>
+
+    <!-- Articles List -->
+    <section class="articles">
         <div class="container">
-            <div class="row">
-                <!-- Sidebar -->
-                <div class="col-lg-3 mb-4">
-                    <div class="sidebar-widget">
-                        <h3 class="widget-title">Filtrar por</h3>
-                        <div class="filter-group">
-                            <h4>Categorías</h4>
-                            <ul class="category-filter-list">
-                                <li><a href="categoria.html?cat=smartphones">Smartphones</a></li>
-                                <li><a href="categoria.html?cat=gadgets">Gadgets</a></li>
-                                <li><a href="categoria.html?cat=ia">Inteligencia Artificial</a></li>
-                                <li><a href="categoria.html?cat=accesorios">Accesorios</a></li>
-                                <li><a href="categoria.html?cat=reviews">Reviews</a></li>
-                                <li><a href="categoria.html?cat=guias">Guías de Compra</a></li>
-                            </ul>
+            <div class="articles-grid">
+                <!-- Article 1 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Los mejores smartphones de 2026" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Smartphones</span>
+                            <span class="article-date">10 Ene 2026</span>
                         </div>
+                        <h3><a href="articulo.html">Los Mejores Smartphones de 2026: Comparativa Completa</a></h3>
+                        <p class="article-excerpt">
+                            Analizamos los smartphones más destacados del mercado con especificaciones, precios y rendimiento real. Descubre cuál se adapta mejor a tus necesidades.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
                     </div>
-                    
-                    <!-- Ad Space - Sidebar -->
-                    <div class="ad-space ad-sidebar mt-4">
-                        <div class="ad-placeholder">300x250</div>
-                    </div>
-                </div>
+                </article>
 
-                <!-- Articles List -->
-                <div class="col-lg-9">
-                    <div class="articles-grid">
-                        <article class="article-card article-horizontal">
-                            <img src="/placeholder.svg?height=200&width=300" alt="Smartphone flagship" class="article-image">
-                            <div class="article-content">
-                                <span class="article-category">Smartphones</span>
-                                <h3 class="article-title">Los 10 Mejores Smartphones de 2026: Guía Completa</h3>
-                                <p class="article-excerpt">Análisis exhaustivo de los smartphones más potentes del año, con comparativas de rendimiento, cámara y batería. Descubre cuál es el mejor para ti con nuestras pruebas detalladas y opiniones de expertos.</p>
-                                <div class="article-meta">
-                                    <span class="article-date">10 Ene 2026</span>
-                                    <span class="article-read-time">8 min lectura</span>
-                                </div>
-                                <a href="articulo.html?id=mejores-smartphones-2026" class="btn btn-primary">Leer Artículo</a>
-                            </div>
-                        </article>
-
-                        <article class="article-card article-horizontal">
-                            <img src="/placeholder.svg?height=200&width=300" alt="Smartphone económico" class="article-image">
-                            <div class="article-content">
-                                <span class="article-category">Smartphones</span>
-                                <h3 class="article-title">Mejores Smartphones por Menos de $500 en 2026</h3>
-                                <p class="article-excerpt">¿Buscas un smartphone potente sin gastar una fortuna? Aquí están las mejores opciones que ofrecen excelente rendimiento, buenas cámaras y batería duradera sin romper el banco.</p>
-                                <div class="article-meta">
-                                    <span class="article-date">8 Ene 2026</span>
-                                    <span class="article-read-time">6 min lectura</span>
-                                </div>
-                                <a href="articulo.html?id=smartphones-economicos" class="btn btn-primary">Leer Artículo</a>
-                            </div>
-                        </article>
-
-                        <!-- Ad Space - Between Articles -->
-                        <div class="ad-space ad-mid-content my-4">
-                            <div class="ad-placeholder">728x90</div>
+                <!-- Article 2 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="IA en la vida cotidiana" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Inteligencia Artificial</span>
+                            <span class="article-date">9 Ene 2026</span>
                         </div>
-
-                        <article class="article-card article-horizontal">
-                            <img src="/placeholder.svg?height=200&width=300" alt="Cámara de smartphone" class="article-image">
-                            <div class="article-content">
-                                <span class="article-category">Smartphones</span>
-                                <h3 class="article-title">Smartphones con las Mejores Cámaras para Fotografía</h3>
-                                <p class="article-excerpt">Comparativa de los móviles con mejor sistema fotográfico. Analizamos calidad de imagen, modo nocturno, zoom óptico y capacidades de vídeo 8K para que captures tus mejores momentos.</p>
-                                <div class="article-meta">
-                                    <span class="article-date">6 Ene 2026</span>
-                                    <span class="article-read-time">10 min lectura</span>
-                                </div>
-                                <a href="articulo.html?id=smartphones-mejor-camara" class="btn btn-primary">Leer Artículo</a>
-                            </div>
-                        </article>
-
-                        <article class="article-card article-horizontal">
-                            <img src="/placeholder.svg?height=200&width=300" alt="Smartphone plegable" class="article-image">
-                            <div class="article-content">
-                                <span class="article-category">Smartphones</span>
-                                <h3 class="article-title">¿Valen la Pena los Smartphones Plegables?</h3>
-                                <p class="article-excerpt">Exploramos la última generación de móviles plegables, sus ventajas, desventajas y si realmente justifican su precio premium en el mercado actual.</p>
-                                <div class="article-meta">
-                                    <span class="article-date">4 Ene 2026</span>
-                                    <span class="article-read-time">7 min lectura</span>
-                                </div>
-                                <a href="articulo.html?id=smartphones-plegables" class="btn btn-primary">Leer Artículo</a>
-                            </div>
-                        </article>
-
-                        <article class="article-card article-horizontal">
-                            <img src="/placeholder.svg?height=200&width=300" alt="Smartphone 5G" class="article-image">
-                            <div class="article-content">
-                                <span class="article-category">Smartphones</span>
-                                <h3 class="article-title">Guía Completa de Smartphones 5G: Lo Que Necesitas Saber</h3>
-                                <p class="article-excerpt">Todo sobre la conectividad 5G en smartphones: ventajas, cobertura, consumo de batería y los mejores modelos compatibles con la red del futuro.</p>
-                                <div class="article-meta">
-                                    <span class="article-date">2 Ene 2026</span>
-                                    <span class="article-read-time">9 min lectura</span>
-                                </div>
-                                <a href="articulo.html?id=guia-smartphones-5g" class="btn btn-primary">Leer Artículo</a>
-                            </div>
-                        </article>
-
-                        <article class="article-card article-horizontal">
-                            <img src="/placeholder.svg?height=200&width=300" alt="Batería de smartphone" class="article-image">
-                            <div class="article-content">
-                                <span class="article-category">Smartphones</span>
-                                <h3 class="article-title">Smartphones con Mayor Duración de Batería 2026</h3>
-                                <p class="article-excerpt">¿Cansado de cargar tu móvil constantemente? Descubre los smartphones que ofrecen la mejor autonomía y tecnologías de carga rápida más avanzadas.</p>
-                                <div class="article-meta">
-                                    <span class="article-date">30 Dic 2025</span>
-                                    <span class="article-read-time">5 min lectura</span>
-                                </div>
-                                <a href="articulo.html?id=smartphones-mejor-bateria" class="btn btn-primary">Leer Artículo</a>
-                            </div>
-                        </article>
-
-                        <!-- Pagination -->
-                        <nav aria-label="Paginación de artículos" class="mt-5">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Siguiente</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <h3><a href="articulo.html">Cómo la IA Está Transformando Nuestra Vida Cotidiana</a></h3>
+                        <p class="article-excerpt">
+                            La inteligencia artificial ya no es ciencia ficción. Descubre cómo la IA está presente en tu día a día y hacia dónde se dirige el futuro.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
                     </div>
-                </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Mejores auriculares inalámbricos" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Accesorios</span>
+                            <span class="article-date">8 Ene 2026</span>
+                        </div>
+                        <h3><a href="articulo.html">Auriculares Inalámbricos 2026: Top 10 con Mejor Sonido</a></h3>
+                        <p class="article-excerpt">
+                            Comparamos los mejores auriculares inalámbricos del mercado. Calidad de sonido, cancelación de ruido y autonomía en nuestra review completa.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Gadgets para smart home" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Gadgets</span>
+                            <span class="article-date">7 Ene 2026</span>
+                        </div>
+                        <h3><a href="articulo.html">Gadgets Imprescindibles para Tu Casa Inteligente</a></h3>
+                        <p class="article-excerpt">
+                            Convierte tu hogar en una casa inteligente con estos gadgets esenciales. Automatización, seguridad y confort al alcance de tu mano.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Laptops para trabajo remoto" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Reviews</span>
+                            <span class="article-date">6 Ene 2026</span>
+                        </div>
+                        <h3><a href="articulo.html">Las Mejores Laptops para Trabajo Remoto en 2026</a></h3>
+                        <p class="article-excerpt">
+                            Rendimiento, portabilidad y autonomía. Analizamos las laptops ideales para profesionales que trabajan desde cualquier lugar.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Setup gaming 2026" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Gadgets</span>
+                            <span class="article-date">5 Ene 2026</span>
+                        </div>
+                        <h3><a href="articulo.html">Crea el Setup Gaming Perfecto: Guía Completa 2026</a></h3>
+                        <p class="article-excerpt">
+                            Desde el monitor hasta el teclado mecánico. Todo lo que necesitas saber para montar tu estación de gaming definitiva.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Article 7 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Smartwatches 2026" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Gadgets</span>
+                            <span class="article-date">4 Ene 2026</span>
+                        </div>
+                        <h3><a href="articulo.html">Los Mejores Smartwatches para Fitness y Salud</a></h3>
+                        <p class="article-excerpt">
+                            Monitorización de salud, GPS y autonomía prolongada. Comparamos los smartwatches más completos del mercado actual.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Article 8 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Cámaras mirrorless" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Reviews</span>
+                            <span class="article-date">3 Ene 2026</span>
+                        </div>
+                        <h3><a href="articulo.html">Guía de Compra: Mejores Cámaras Mirrorless 2026</a></h3>
+                        <p class="article-excerpt">
+                            ¿Quieres mejorar tu fotografía? Analizamos las cámaras mirrorless más versátiles para principiantes y profesionales.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Article 9 -->
+                <article class="article-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Tablets para productividad" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Gadgets</span>
+                            <span class="article-date">2 Ene 2026</span>
+                        </div>
+                        <h3><a href="articulo.html">Tablets para Productividad: ¿Pueden Reemplazar a un Laptop?</a></h3>
+                        <p class="article-excerpt">
+                            Exploramos si las tablets modernas pueden realmente sustituir a un ordenador portátil para trabajo profesional y creativo.
+                        </p>
+                        <a href="articulo.html" class="read-more">Leer más →</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
+    <!-- Ad Space - Bottom -->
+    <div class="container">
+        <div class="ad-space" id="ad-bottom">
+            <!-- Google AdSense Bottom Ad -->
+            <p>Espacio publicitario</p>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="site-footer">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="footer-brand">
-                        <!-- Replaced emoji with Bootstrap icon -->
-                        <i class="bi bi-cpu logo-icon"></i>
-                        <span class="logo-text">TechHub</span>
-                    </div>
-                    <p class="footer-description">Tu fuente confiable de información sobre tecnología y gadgets.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DigitalGear</h4>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem;">
+                        Tu fuente confiable de información tecnológica. Reviews, análisis y las últimas tendencias en gadgets y tecnología.
+                    </p>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h4 class="footer-title">Categorías</h4>
+                
+                <div class="footer-section">
+                    <h4>Categorías</h4>
                     <ul class="footer-links">
-                        <li><a href="categoria.html?cat=smartphones">Smartphones</a></li>
                         <li><a href="categoria.html?cat=gadgets">Gadgets</a></li>
-                        <li><a href="categoria.html?cat=ia">IA</a></li>
+                        <li><a href="categoria.html?cat=smartphones">Smartphones</a></li>
+                        <li><a href="categoria.html?cat=ia">Inteligencia Artificial</a></li>
+                        <li><a href="categoria.html?cat=accesorios">Accesorios</a></li>
                         <li><a href="categoria.html?cat=reviews">Reviews</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h4 class="footer-title">Información</h4>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
                     <ul class="footer-links">
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="cookies.html">Política de Cookies</a></li>
+                        <li><a href="terminos.html">Términos y Condiciones</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="privacidad.html">Privacidad</a></li>
-                        <li><a href="cookies.html">Cookies</a></li>
-                        <li><a href="terminos.html">Términos</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h4 class="footer-title">Síguenos</h4>
-                    <div class="social-links">
-                        <!-- Replaced emojis with Bootstrap icons -->
-                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                    </div>
+                
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" target="_blank" rel="noopener">Twitter</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+                    </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 TechHub. Todos los derechos reservados.</p>
-                <p class="disclosure">Este sitio participa en programas de afiliados.</p>
+                <p>&copy; 2026 DigitalGear. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/ads.js"></script>
 </body>
 </html>

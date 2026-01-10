@@ -1,144 +1,167 @@
-// TechHub - Main JavaScript
+/**
+ * DigitalGear - Main JavaScript
+ * Handles responsive menu, smooth scrolling, and general interactivity
+ */
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Update category page based on URL parameter
-  updateCategoryPage()
+// DOM Elements
+const menuToggle = document.getElementById("menuToggle")
+const navMenu = document.getElementById("navMenu")
 
-  // Handle newsletter form submission
-  handleNewsletterForm()
+// Mobile Menu Toggle
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", function () {
+    navMenu.classList.toggle("active")
 
-  // Handle contact form submission
-  handleContactForm()
-
-  // Smooth scroll for anchor links
-  initSmoothScroll()
-
-  // Add scroll-to-top button
-  initScrollToTop()
-})
-
-// Update category page content based on URL parameter
-function updateCategoryPage() {
-  const urlParams = new URLSearchParams(window.location.search)
-  const category = urlParams.get("cat")
-
-  if (!category) return
-
-  const categoryData = {
-    smartphones: {
-      title: "Smartphones",
-      description: "Descubre los últimos modelos, comparativas y análisis en profundidad de smartphones",
-    },
-    gadgets: {
-      title: "Gadgets",
-      description: "Los dispositivos más innovadores y útiles que debes conocer",
-    },
-    ia: {
-      title: "Inteligencia Artificial",
-      description: "Explora el futuro de la tecnología con IA y machine learning",
-    },
-    accesorios: {
-      title: "Accesorios",
-      description: "Complementa tu experiencia tecnológica con los mejores accesorios",
-    },
-    reviews: {
-      title: "Reviews",
-      description: "Análisis profesionales y honestos de productos tecnológicos",
-    },
-    guias: {
-      title: "Guías de Compra",
-      description: "Encuentra el producto perfecto para ti con nuestras guías especializadas",
-    },
-  }
-
-  const data = categoryData[category]
-  if (data) {
-    const titleElement = document.getElementById("categoryTitle")
-    const descElement = document.getElementById("categoryDescription")
-
-    if (titleElement) titleElement.textContent = data.title
-    if (descElement) descElement.textContent = data.description
-  }
-}
-
-// Handle newsletter form submission
-function handleNewsletterForm() {
-  const form = document.getElementById("newsletterForm")
-  if (!form) return
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault()
-    const email = this.querySelector('input[type="email"]').value
-
-    // Simulate form submission
-    alert("¡Gracias por suscribirte! Pronto recibirás nuestras últimas noticias en " + email)
-    this.reset()
-  })
-}
-
-// Handle contact form submission
-function handleContactForm() {
-  const form = document.getElementById("contactForm")
-  if (!form) return
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault()
-
-    const nombre = document.getElementById("nombre").value
-    const email = document.getElementById("email").value
-    const asunto = document.getElementById("asunto").value
-    const mensaje = document.getElementById("mensaje").value
-
-    // Simulate form submission
-    alert("¡Gracias por contactarnos, " + nombre + "! Hemos recibido tu mensaje y te responderemos pronto.")
-    this.reset()
-  })
-}
-
-// Smooth scroll for anchor links
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      const href = this.getAttribute("href")
-      if (href === "#") return
-
-      e.preventDefault()
-      const target = document.querySelector(href)
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        })
+    // Animate hamburger icon
+    const spans = this.querySelectorAll("span")
+    spans.forEach((span, index) => {
+      if (navMenu.classList.contains("active")) {
+        if (index === 0) span.style.transform = "rotate(45deg) translateY(8px)"
+        if (index === 1) span.style.opacity = "0"
+        if (index === 2) span.style.transform = "rotate(-45deg) translateY(-8px)"
+      } else {
+        span.style.transform = ""
+        span.style.opacity = ""
       }
+    })
+  })
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove("active")
+      menuToggle.querySelectorAll("span").forEach((span) => {
+        span.style.transform = ""
+        span.style.opacity = ""
+      })
+    }
+  })
+
+  // Close menu when clicking on a link
+  const navLinks = navMenu.querySelectorAll("a")
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active")
+      menuToggle.querySelectorAll("span").forEach((span) => {
+        span.style.transform = ""
+        span.style.opacity = ""
+      })
     })
   })
 }
 
-// Scroll to top button
-function initScrollToTop() {
-  // Create scroll to top button
+// Smooth Scrolling for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const targetId = this.getAttribute("href")
+    if (targetId !== "#" && targetId !== "#!") {
+      e.preventDefault()
+      const targetElement = document.querySelector(targetId)
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        })
+      }
+    }
+  })
+})
+
+// Category Page - Dynamic Title Update
+function updateCategoryInfo() {
+  const urlParams = new URLSearchParams(window.location.search)
+  const category = urlParams.get("cat")
+
+  const categoryTitles = {
+    gadgets: {
+      title: "Categoría: Gadgets",
+      description:
+        "Los dispositivos más innovadores y gadgets tecnológicos del mercado. Reviews, análisis y comparativas.",
+    },
+    smartphones: {
+      title: "Categoría: Smartphones",
+      description:
+        "Análisis completos de los mejores smartphones del mercado. Especificaciones, precios y rendimiento real.",
+    },
+    ia: {
+      title: "Categoría: Inteligencia Artificial",
+      description:
+        "Explora el futuro de la tecnología con nuestros artículos sobre IA, machine learning y automatización.",
+    },
+    accesorios: {
+      title: "Categoría: Accesorios",
+      description:
+        "Los mejores accesorios tecnológicos para complementar tus dispositivos. Auriculares, cargadores y más.",
+    },
+    reviews: {
+      title: "Categoría: Reviews",
+      description:
+        "Reviews honestas y detalladas de productos tecnológicos. Análisis en profundidad para ayudarte a decidir.",
+    },
+  }
+
+  const categoryTitle = document.getElementById("categoryTitle")
+  const categoryDescription = document.getElementById("categoryDescription")
+
+  if (category && categoryTitles[category] && categoryTitle && categoryDescription) {
+    categoryTitle.textContent = categoryTitles[category].title
+    categoryDescription.textContent = categoryTitles[category].description
+    document.title = `${categoryTitles[category].title} | DigitalGear`
+  }
+}
+
+// Run category info update if on category page
+if (window.location.pathname.includes("categoria.html")) {
+  updateCategoryInfo()
+}
+
+// Lazy Loading Images
+function lazyLoadImages() {
+  const images = document.querySelectorAll("img[data-src]")
+
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target
+        img.src = img.dataset.src
+        img.removeAttribute("data-src")
+        observer.unobserve(img)
+      }
+    })
+  })
+
+  images.forEach((img) => imageObserver.observe(img))
+}
+
+// Initialize lazy loading
+if ("IntersectionObserver" in window) {
+  document.addEventListener("DOMContentLoaded", lazyLoadImages)
+}
+
+// Scroll to Top Button
+function createScrollToTopButton() {
   const scrollBtn = document.createElement("button")
   scrollBtn.innerHTML = "↑"
   scrollBtn.className = "scroll-to-top"
-  scrollBtn.setAttribute("aria-label", "Volver arriba")
+  scrollBtn.setAttribute("aria-label", "Scroll to top")
   scrollBtn.style.cssText = `
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #00d4ff, #00a3cc);
-    color: #0a1929;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-  `
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+        color: var(--color-bg-primary);
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+        box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+    `
 
   document.body.appendChild(scrollBtn)
 
@@ -153,22 +176,76 @@ function initScrollToTop() {
     }
   })
 
-  // Scroll to top on click
+  // Scroll to top when clicked
   scrollBtn.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     })
   })
+}
 
-  // Hover effect
-  scrollBtn.addEventListener("mouseenter", function () {
-    this.style.transform = "translateY(-5px)"
-    this.style.boxShadow = "0 6px 20px rgba(0, 212, 255, 0.4)"
-  })
+// Initialize scroll to top button
+document.addEventListener("DOMContentLoaded", createScrollToTopButton)
 
-  scrollBtn.addEventListener("mouseleave", function () {
-    this.style.transform = "translateY(0)"
-    this.style.boxShadow = "0 4px 15px rgba(0, 212, 255, 0.3)"
+// Article Reading Progress Bar
+function createReadingProgressBar() {
+  if (!document.querySelector(".article-body")) return
+
+  const progressBar = document.createElement("div")
+  progressBar.className = "reading-progress"
+  progressBar.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+        z-index: 9999;
+        transition: width 0.1s ease;
+    `
+
+  document.body.appendChild(progressBar)
+
+  window.addEventListener("scroll", () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+    const scrolled = (winScroll / height) * 100
+    progressBar.style.width = scrolled + "%"
   })
 }
+
+// Initialize reading progress bar
+document.addEventListener("DOMContentLoaded", createReadingProgressBar)
+
+// Active Navigation Link Highlight
+function highlightActiveNavLink() {
+  const currentPath = window.location.pathname
+  const navLinks = document.querySelectorAll(".nav-menu a")
+
+  navLinks.forEach((link) => {
+    const linkPath = new URL(link.href).pathname
+    if (currentPath === linkPath || (currentPath === "/" && linkPath.includes("index.html"))) {
+      link.classList.add("active")
+    }
+  })
+}
+
+// Initialize active nav link
+document.addEventListener("DOMContentLoaded", highlightActiveNavLink)
+
+// External Links - Open in New Tab
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll('a[href^="http"]')
+  links.forEach((link) => {
+    if (!link.href.includes(window.location.hostname) && !link.hasAttribute("target")) {
+      link.setAttribute("target", "_blank")
+      link.setAttribute("rel", "noopener noreferrer")
+    }
+  })
+})
+
+// Console Message
+console.log("%c🚀 DigitalGear", "color: #00d9ff; font-size: 24px; font-weight: bold;")
+console.log("%c¡Bienvenido a DigitalGear!", "color: #00ff88; font-size: 14px;")
+console.log("%cTu fuente de información tecnológica", "color: #9ba3b4; font-size: 12px;")
