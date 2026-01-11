@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://digitalgear.vercel.app/sitemap.xml
+Sitemap: https://69640db3a2536d9c4a83921a--transcendent-nougat-0f0eb1.netlify.app/sitemap.xml
 
 # Block access to admin areas (if any)
 Disallow: /admin/
